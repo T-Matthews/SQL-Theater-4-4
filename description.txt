@@ -1,0 +1,24 @@
+
+Elephant SQL Link(also attached to HW):
+postgres://jbnddduh:rVnkas0_uwiEM87CM0sJfvPKcj1P7tMZ@heffalump.db.elephantsql.com/jbnddduh
+
+
+For my ERD on this, I started with the 4 required tables, unrelated. When looking at them,
+	it seemed that the customer would buy both concessions, and tickets, meaning that
+	there is a connection off both sides of customers. Tickets are sold in relation
+	to movies, so those are connected. This completed my structure, as everything was 
+	now connected; leaving the longest chain/path from concessions to movies.
+
+When looking at the specific types of cardinality, I started with the customers. Many
+	customers can buy many concessions, so this is a '1 or many' to '1 or many' 
+	relationship. Because of this, an intermediate table was created, called 
+	buying concessions. 
+	Each customer will also buy 0 to many tickets, if one buys for a group. This 
+	seemed more realistic to the real world, and would lead to more useful data
+	if I were the owner of a theater. 
+	You can sell many tickets to a single movie, so this was a '1' to '0 or many'
+	relationship.
+	
+This connects all the tables. For the sake of maintaining a minimal connection and not
+	linking everything and taking up additional space, this is the final form. 3 
+	films, 4 customers, 4 ticket prices, and 5 consession snacks were added. 
